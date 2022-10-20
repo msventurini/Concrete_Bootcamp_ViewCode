@@ -18,6 +18,7 @@
 		EA5913092900E51B00351876 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5913082900E51B00351876 /* CustomViewController.swift */; };
 		EA59130B2900E60A00351876 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59130A2900E60A00351876 /* CustomView.swift */; };
 		EA59130E2900E7B500351876 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59130D2900E7B500351876 /* ViewCode.swift */; };
+		EA5913102900EC8F00351876 /* ComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59130F2900EC8F00351876 /* ComponentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		EA5913082900E51B00351876 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		EA59130A2900E60A00351876 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		EA59130D2900E7B500351876 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		EA59130F2900EC8F00351876 /* ComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			children = (
 				EA5913082900E51B00351876 /* CustomViewController.swift */,
 				EA59130A2900E60A00351876 /* CustomView.swift */,
+				EA59130F2900EC8F00351876 /* ComponentView.swift */,
 			);
 			path = CustomViewController;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				EA59130B2900E60A00351876 /* CustomView.swift in Sources */,
 				EA5912DC2900DDD600351876 /* ViewController.swift in Sources */,
 				EA5912D82900DDD600351876 /* AppDelegate.swift in Sources */,
+				EA5913102900EC8F00351876 /* ComponentView.swift in Sources */,
 				EA5912DA2900DDD600351876 /* SceneDelegate.swift in Sources */,
 				EA5913092900E51B00351876 /* CustomViewController.swift in Sources */,
 				EA59130E2900E7B500351876 /* ViewCode.swift in Sources */,

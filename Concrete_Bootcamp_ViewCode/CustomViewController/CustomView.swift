@@ -9,11 +9,9 @@ import UIKit
 
 class CustomView: UIView {
     
-    lazy var labelView: UILabel = {
-        let view = UILabel(frame: .zero)
+    lazy var component: ComponentView = {
+        let view = ComponentView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .red
-        view.text = "Hello World!"
         return view
     }()
     
@@ -31,13 +29,14 @@ class CustomView: UIView {
 
 extension CustomView: ViewCode {
     func builldHierarchy() {
-        addSubview(labelView)
+        addSubview(component)
 
     }
     
     func setupConstraint() {
-        labelView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        labelView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        component.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        component.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        
     }
     
     func setupConfiguration() {
