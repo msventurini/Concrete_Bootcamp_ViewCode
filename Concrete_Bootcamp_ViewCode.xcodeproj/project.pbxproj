@@ -17,6 +17,7 @@
 		EA5912FB2900DDD700351876 /* Concrete_Bootcamp_ViewCodeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5912FA2900DDD700351876 /* Concrete_Bootcamp_ViewCodeUITestsLaunchTests.swift */; };
 		EA5913092900E51B00351876 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5913082900E51B00351876 /* CustomViewController.swift */; };
 		EA59130B2900E60A00351876 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59130A2900E60A00351876 /* CustomView.swift */; };
+		EA59130E2900E7B500351876 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59130D2900E7B500351876 /* ViewCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		EA5912FA2900DDD700351876 /* Concrete_Bootcamp_ViewCodeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concrete_Bootcamp_ViewCodeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EA5913082900E51B00351876 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		EA59130A2900E60A00351876 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		EA59130D2900E7B500351876 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		EA5912D62900DDD600351876 /* Concrete_Bootcamp_ViewCode */ = {
 			isa = PBXGroup;
 			children = (
+				EA59130C2900E7A700351876 /* Utils */,
 				EA5913072900E50500351876 /* CustomViewController */,
 				EA5912D72900DDD600351876 /* AppDelegate.swift */,
 				EA5912D92900DDD600351876 /* SceneDelegate.swift */,
@@ -136,6 +139,14 @@
 				EA59130A2900E60A00351876 /* CustomView.swift */,
 			);
 			path = CustomViewController;
+			sourceTree = "<group>";
+		};
+		EA59130C2900E7A700351876 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EA59130D2900E7B500351876 /* ViewCode.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +284,7 @@
 				EA5912D82900DDD600351876 /* AppDelegate.swift in Sources */,
 				EA5912DA2900DDD600351876 /* SceneDelegate.swift in Sources */,
 				EA5913092900E51B00351876 /* CustomViewController.swift in Sources */,
+				EA59130E2900E7B500351876 /* ViewCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
