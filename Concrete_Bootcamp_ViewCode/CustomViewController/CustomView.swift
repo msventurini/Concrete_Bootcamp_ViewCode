@@ -6,14 +6,11 @@
 //
 
 import UIKit
+import SnapKit
 
 class CustomView: UIView {
     
-    lazy var component: ComponentView = {
-        let view = ComponentView(frame: .zero)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    lazy var component = ComponentView(frame: .zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,8 +31,12 @@ extension CustomView: ViewCode {
     }
     
     func setupConstraint() {
-        component.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        component.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        component.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
+            make.centerX.equalToSuperview()
+        }
+        //component.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        //component.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
     }
     
