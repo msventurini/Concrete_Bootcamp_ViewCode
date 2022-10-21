@@ -9,15 +9,6 @@ import UIKit
 import SnapKit
 class ComponentView: UIView {
 
-    lazy var imageView: UIImageView = {
-        let view = UIImageView(frame: .zero)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .orange
-        view.layer.cornerRadius = 10
-        view.layer.cornerCurve = .continuous
-        return view
-    }()
-    
     lazy var labelView: UILabel = {
         let view = UILabel(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -50,27 +41,26 @@ class ComponentView: UIView {
 
 extension ComponentView: ViewCode {
     func builldHierarchy() {
-        addSubview(imageView)
+        
+        addSubview(view)
         addSubview(labelView)
-        imageView.addSubview(view)
+
+        
     }
     
     func setupConstraint() {
   
-        labelView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
-        labelView.leftAnchor.constraint(equalTo: imageView.leftAnchor).isActive = true
-        labelView.rightAnchor.constraint(equalTo: imageView.rightAnchor).isActive = true
+        labelView.topAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        labelView.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor).isActive = true
+        labelView.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor).isActive = true
         labelView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
-        imageView.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
-        imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        view.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.75).isActive = true
+        view.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor).isActive = true
+        view.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        view.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
-        view.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 5).isActive = true
-        view.leftAnchor.constraint(equalTo: imageView.leftAnchor, constant: 5).isActive = true
-        view.rightAnchor.constraint(equalTo: imageView.rightAnchor, constant: -5).isActive = true
-        view.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -5).isActive = true
+
 
     }
     

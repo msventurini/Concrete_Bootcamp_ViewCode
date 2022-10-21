@@ -37,8 +37,13 @@ extension CustomView: ViewCode {
             make.centerX.equalToSuperview()
         }*/
         
-        component.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         component.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        component.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
+        component.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
+        
+        component.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.9).isActive = true
+
         
     }
     

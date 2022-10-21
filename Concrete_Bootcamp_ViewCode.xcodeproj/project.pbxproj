@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA11FC5029033C7400BE4139 /* SolidColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA11FC4F29033C7400BE4139 /* SolidColorView.swift */; };
 		EA5912D82900DDD600351876 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5912D72900DDD600351876 /* AppDelegate.swift */; };
 		EA5912DA2900DDD600351876 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5912D92900DDD600351876 /* SceneDelegate.swift */; };
 		EA5912DC2900DDD600351876 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5912DB2900DDD600351876 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA11FC4F29033C7400BE4139 /* SolidColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidColorView.swift; sourceTree = "<group>"; };
 		EA5912D42900DDD600351876 /* Concrete_Bootcamp_ViewCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concrete_Bootcamp_ViewCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5912D72900DDD600351876 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA5912D92900DDD600351876 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				EA59130A2900E60A00351876 /* CustomView.swift */,
 				EA59130F2900EC8F00351876 /* ComponentView.swift */,
 				EA5913142901178B00351876 /* VariableComponentView.swift */,
+				EA11FC4F29033C7400BE4139 /* SolidColorView.swift */,
 			);
 			path = CustomViewController;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			files = (
 				EA59130B2900E60A00351876 /* CustomView.swift in Sources */,
 				EA5912DC2900DDD600351876 /* ViewController.swift in Sources */,
+				EA11FC5029033C7400BE4139 /* SolidColorView.swift in Sources */,
 				EA5913152901178B00351876 /* VariableComponentView.swift in Sources */,
 				EA5912D82900DDD600351876 /* AppDelegate.swift in Sources */,
 				EA5913102900EC8F00351876 /* ComponentView.swift in Sources */,
