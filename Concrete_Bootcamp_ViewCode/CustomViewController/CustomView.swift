@@ -31,12 +31,14 @@ extension CustomView: ViewCode {
     }
     
     func setupConstraint() {
+        /*
         component.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
             make.centerX.equalToSuperview()
-        }
-        //component.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        //component.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        }*/
+        
+        component.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        component.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
     }
     
