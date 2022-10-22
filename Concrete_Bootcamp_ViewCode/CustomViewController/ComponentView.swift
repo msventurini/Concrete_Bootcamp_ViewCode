@@ -62,21 +62,24 @@ extension ComponentView: ViewCode {
     
     func setupConstraint() {
         
-        let viewMultiplier = 0.75
-        let labelMultiplier = (1.0 - viewMultiplier) / Double(numberOfLabelViews)
-        
+        let viewMultiplier = 0.60
+        //let labelMultiplier = (1.0 - viewMultiplier) / Double(numberOfLabelViews)
+        let labelMultiplier: CGFloat = 0.40 / CGFloat(numberOfLabelViews)
+
         
         for i in stride(from: (numberOfLabelViews - 1), to: 0, by: -1) {
             labelViews[i].topAnchor.constraint(equalTo: labelViews[i-1].bottomAnchor).isActive = true
+            labelViews[i].heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: labelMultiplier).isActive = true
             labelViews[i].leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor).isActive = true
             labelViews[i].rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor).isActive = true
         }
 
         labelViews[0].topAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        labelViews[0].heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: labelMultiplier).isActive = true
         labelViews[0].leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor).isActive = true
         labelViews[0].rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor).isActive = true
 
-        view.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.75).isActive = true
+        view.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: viewMultiplier).isActive = true
         view.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor).isActive = true
         view.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor ).isActive = true
         view.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
