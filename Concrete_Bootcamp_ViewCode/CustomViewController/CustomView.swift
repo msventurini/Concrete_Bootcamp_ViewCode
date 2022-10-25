@@ -73,25 +73,6 @@ extension CustomView: ViewCode {
         trailingVerticalComponent.heightAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
         trailingVerticalComponent.topAnchor.constraint(equalTo: horizontalComponent.bottomAnchor, constant: padding).isActive = true
         
-        /*
-        leadingVerticalComponent.trailingAnchor.constraint(equalTo: centerVerticalComponent.leadingAnchor).isActive = true
-        leadingVerticalComponent.widthAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.widthAnchor, multiplier: 0.3).isActive = true
-
-        leadingVerticalComponent.heightAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
-        leadingVerticalComponent.topAnchor.constraint(equalTo: horizontalComponent.bottomAnchor, constant: padding).isActive = true
-        
-        centerVerticalComponent.centerXAnchor.constraint(equalTo: mainComponent.firstView.centerXAnchor).isActive = true
-        centerVerticalComponent.widthAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.widthAnchor, multiplier: 0.3).isActive = true
-        
-        centerVerticalComponent.heightAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
-        centerVerticalComponent.topAnchor.constraint(equalTo: horizontalComponent.bottomAnchor, constant: padding).isActive = true
-        
-        trailingVerticalComponent.leadingAnchor.constraint(equalTo: centerVerticalComponent.trailingAnchor).isActive = true
-        trailingVerticalComponent.widthAnchor.constraint(equalTo: mainComponent.firstView.widthAnchor, multiplier: 0.3).isActive = true
-        
-        trailingVerticalComponent.heightAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
-        trailingVerticalComponent.topAnchor.constraint(equalTo: horizontalComponent.bottomAnchor, constant: padding).isActive = true
-        */
     }
     
     func setupConfiguration() {

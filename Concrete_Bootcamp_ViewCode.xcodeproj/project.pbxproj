@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EA11FC5029033C7400BE4139 /* SolidColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA11FC4F29033C7400BE4139 /* SolidColorView.swift */; };
 		EA5912D82900DDD600351876 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5912D72900DDD600351876 /* AppDelegate.swift */; };
 		EA5912DA2900DDD600351876 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5912D92900DDD600351876 /* SceneDelegate.swift */; };
 		EA5912DC2900DDD600351876 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5912DB2900DDD600351876 /* ViewController.swift */; };
@@ -21,7 +20,6 @@
 		EA59130E2900E7B500351876 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59130D2900E7B500351876 /* ViewCode.swift */; };
 		EA5913102900EC8F00351876 /* ComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59130F2900EC8F00351876 /* ComponentView.swift */; };
 		EA5913132901142D00351876 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EA5913122901142D00351876 /* SnapKit */; };
-		EA5913152901178B00351876 /* VariableComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5913142901178B00351876 /* VariableComponentView.swift */; };
 		EA724F6329078FBB001AB4AC /* enumListOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA724F6229078FBB001AB4AC /* enumListOptions.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EA11FC4F29033C7400BE4139 /* SolidColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidColorView.swift; sourceTree = "<group>"; };
 		EA5912D42900DDD600351876 /* Concrete_Bootcamp_ViewCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concrete_Bootcamp_ViewCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5912D72900DDD600351876 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA5912D92900DDD600351876 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +57,6 @@
 		EA59130A2900E60A00351876 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		EA59130D2900E7B500351876 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		EA59130F2900EC8F00351876 /* ComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentView.swift; sourceTree = "<group>"; };
-		EA5913142901178B00351876 /* VariableComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableComponentView.swift; sourceTree = "<group>"; };
 		EA724F6229078FBB001AB4AC /* enumListOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enumListOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,8 +144,6 @@
 				EA5913082900E51B00351876 /* CustomViewController.swift */,
 				EA59130A2900E60A00351876 /* CustomView.swift */,
 				EA59130F2900EC8F00351876 /* ComponentView.swift */,
-				EA5913142901178B00351876 /* VariableComponentView.swift */,
-				EA11FC4F29033C7400BE4139 /* SolidColorView.swift */,
 				EA724F6229078FBB001AB4AC /* enumListOptions.swift */,
 			);
 			path = CustomViewController;
@@ -301,8 +295,6 @@
 			files = (
 				EA59130B2900E60A00351876 /* CustomView.swift in Sources */,
 				EA5912DC2900DDD600351876 /* ViewController.swift in Sources */,
-				EA11FC5029033C7400BE4139 /* SolidColorView.swift in Sources */,
-				EA5913152901178B00351876 /* VariableComponentView.swift in Sources */,
 				EA5912D82900DDD600351876 /* AppDelegate.swift in Sources */,
 				EA724F6329078FBB001AB4AC /* enumListOptions.swift in Sources */,
 				EA5913102900EC8F00351876 /* ComponentView.swift in Sources */,
