@@ -10,11 +10,11 @@ import SnapKit
 
 class CustomView: UIView {
     
-    lazy var mainComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.9)
-    lazy var horizontalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .trailingList,mainViewProportion: 0.3)
-    lazy var leadingVerticalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList,mainViewProportion: 0.6)
-    lazy var centerVerticalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList,mainViewProportion: 0.6)
-    lazy var trailingVerticalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList,mainViewProportion: 0.6)
+    lazy var mainComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.85)
+    lazy var horizontalComponent = ComponentView(numberOfLabelViews: 3, listPosition: .trailingList,mainViewProportion: 0.3)
+    lazy var leadingVerticalComponent = ComponentView(numberOfLabelViews: 2, listPosition: .bottonList,mainViewProportion: 0.6)
+    lazy var centerVerticalComponent = ComponentView(numberOfLabelViews: 2, listPosition: .bottonList,mainViewProportion: 0.6)
+    lazy var trailingVerticalComponent = ComponentView(numberOfLabelViews: 2, listPosition: .bottonList,mainViewProportion: 0.6)
 
     override init(frame: CGRect) {
         super.init(frame: frame)

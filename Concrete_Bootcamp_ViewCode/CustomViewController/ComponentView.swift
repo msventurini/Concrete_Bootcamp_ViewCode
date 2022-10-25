@@ -11,7 +11,7 @@ class ComponentView: UIView {
     
     var labelViews: [UILabel] = []
     
-    var numberOfLabelViews = 4 //pesquisar como fazer os defaults bonitinho
+    var numberOfLabelViews = 1 //pesquisar como fazer os defaults bonitinho
     var listPosition: ListOptions = .bottonList
     
     var firstViewMultiplier = 0.50
@@ -67,11 +67,40 @@ extension ComponentView: ViewCode {
         
         addSubview(firstView)
         addSubview(secondView)
+        //trocar por uma solução melhor depois
+        
+        for i in stride(from: 0, to: numberOfLabelViews, by: 1) {
+            labelViews.append({
+                let view = UILabel(frame: .zero)
+                view.translatesAutoresizingMaskIntoConstraints = false
+                view.backgroundColor = .red
+                view.text = "Hello World!"
+                return view
+            }())
+            secondView.addSubview(labelViews[i])
+
+        }
+
 
     }
     
     func setupConstraint() {
         
+        let labelMultiplier: CGFloat = secondViewMultiplier / CGFloat(numberOfLabelViews)
+
+        
+        //trocar por uma solução melhor depois
+        for i in stride(from: (numberOfLabelViews - 1), to: 0, by: -1) {
+            labelViews[i].topAnchor.constraint(equalTo: labelViews[i-1].bottomAnchor).isActive = true
+            labelViews[i].heightAnchor.constraint(equalTo: secondView.heightAnchor, multiplier: labelMultiplier).isActive = true
+            labelViews[i].leadingAnchor.constraint(equalTo: secondView.leadingAnchor).isActive = true
+            labelViews[i].trailingAnchor.constraint(equalTo: secondView.trailingAnchor).isActive = true
+        }
+
+        labelViews[0].topAnchor.constraint(equalTo: secondView.topAnchor).isActive = true
+        labelViews[0].heightAnchor.constraint(equalTo: secondView.heightAnchor, multiplier: labelMultiplier).isActive = true
+        labelViews[0].leadingAnchor.constraint(equalTo: secondView.leadingAnchor).isActive = true
+        labelViews[0].trailingAnchor.constraint(equalTo: secondView.trailingAnchor).isActive = true
 
         
         if self.listPosition == .bottonList {
@@ -102,7 +131,8 @@ extension ComponentView: ViewCode {
     }
     
     func setupConfiguration() {
-        //
+        secondView.backgroundColor = .clear
+
     }
     
     
