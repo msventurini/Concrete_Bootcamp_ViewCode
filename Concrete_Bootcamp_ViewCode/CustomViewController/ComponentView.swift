@@ -19,6 +19,8 @@ class ComponentView: UIView {
     
     var tempFlag = 2
     
+    var padding = 8.0
+    
     
     lazy var firstView: UIView = {
         let view = UIView(frame: .zero)
@@ -74,7 +76,7 @@ extension ComponentView: ViewCode {
         
         if self.listPosition == .bottonList {
             
-            secondView.topAnchor.constraint(equalTo: firstView.bottomAnchor).isActive = true
+            secondView.topAnchor.constraint(equalTo: firstView.bottomAnchor, constant: padding).isActive = true
             secondView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: secondViewMultiplier).isActive = true
             secondView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
             secondView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
@@ -85,10 +87,12 @@ extension ComponentView: ViewCode {
             firstView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
             
         } else if self.listPosition == .trailingList {
-            secondView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
-            secondView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: secondViewMultiplier).isActive = true
+            //secondView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
+            secondView.trailingAnchor.constraint(equalTo:safeAreaLayoutGuide.trailingAnchor).isActive = true
+            //secondView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: secondViewMultiplier).isActive = true
             secondView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
-            secondView.leadingAnchor.constraint(equalTo: firstView.trailingAnchor).isActive = true
+            secondView.leadingAnchor.constraint(equalTo: firstView.trailingAnchor, constant: padding).isActive = true
+            secondView.bottomAnchor.constraint(equalTo: firstView.bottomAnchor).isActive = true
             
             firstView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
             firstView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: firstViewMultiplier).isActive = true
