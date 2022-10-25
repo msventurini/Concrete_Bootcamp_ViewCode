@@ -10,8 +10,8 @@ import SnapKit
 
 class CustomView: UIView {
     
-    lazy var component = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList)
-    lazy var component2 = ComponentView(numberOfLabelViews: 1, listPosition: .trailingList)
+    lazy var mainComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.6)
+    lazy var internalHorizontalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .trailingList,mainViewProportion: 0.3)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,8 +27,8 @@ class CustomView: UIView {
 
 extension CustomView: ViewCode {
     func builldHierarchy() {
-        addSubview(component)
-        component.firstView.addSubview(component2)
+        addSubview(mainComponent)
+        mainComponent.firstView.addSubview(internalHorizontalComponent)
 
     }
     
@@ -39,17 +39,19 @@ extension CustomView: ViewCode {
             make.centerX.equalToSuperview()
         }*/
         
-        component.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        component.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        mainComponent.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        mainComponent.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         
-        component.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
-        component.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.9).isActive = true
+        mainComponent.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
+        mainComponent.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.9).isActive = true
 
         
-//        component2.centerXAnchor.constraint(equalTo: component.topView.centerXAnchor).isActive = true
-//        component2.centerYAnchor.constraint(equalTo: component.topView.centerYAnchor).isActive = true
-//        component2.heightAnchor.constraint(equalTo: component.topView.safeAreaLayoutGuide.heightAnchor).isActive = true
-//        component2.widthAnchor.constraint(equalTo: component.topView.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9).isActive = true
+        internalHorizontalComponent.topAnchor.constraint(equalTo: mainComponent.firstView.topAnchor).isActive = true
+        internalHorizontalComponent.heightAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.heightAnchor, multiplier: 0.5).isActive = true
+
+        
+        internalHorizontalComponent.leadingAnchor.constraint(equalTo: mainComponent.firstView.leadingAnchor).isActive = true
+        internalHorizontalComponent.widthAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.widthAnchor).isActive = true
         
         
         
@@ -58,7 +60,7 @@ extension CustomView: ViewCode {
     
     func setupConfiguration() {
         self.backgroundColor = .gray
-        self.component2.firstView.backgroundColor = .cyan
+        self.internalHorizontalComponent.firstView.backgroundColor = .cyan
     }
     
 }

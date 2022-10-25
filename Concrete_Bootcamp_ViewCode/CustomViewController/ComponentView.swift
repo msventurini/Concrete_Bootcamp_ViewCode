@@ -14,6 +14,9 @@ class ComponentView: UIView {
     var numberOfLabelViews = 4 //pesquisar como fazer os defaults bonitinho
     var listPosition: ListOptions = .bottonList
     
+    var firstViewMultiplier = 0.50
+    var secondViewMultiplier = 0.50
+    
     var tempFlag = 2
     
     
@@ -44,11 +47,14 @@ class ComponentView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(numberOfLabelViews: Int, listPosition: ListOptions) {
+    init(numberOfLabelViews: Int, listPosition: ListOptions, mainViewProportion: Double) {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.numberOfLabelViews = numberOfLabelViews
         self.listPosition = listPosition
+        self.firstViewMultiplier = mainViewProportion
+        self.secondViewMultiplier = 1 - mainViewProportion
+        
         setupView()
     }
     
@@ -64,29 +70,28 @@ extension ComponentView: ViewCode {
     
     func setupConstraint() {
         
-        let topViewMultiplier = 0.60
-        let bottomViewMultiplier = 0.40
+
         
         if self.listPosition == .bottonList {
             
             secondView.topAnchor.constraint(equalTo: firstView.bottomAnchor).isActive = true
-            secondView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: bottomViewMultiplier).isActive = true
+            secondView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: secondViewMultiplier).isActive = true
             secondView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
             secondView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
             
-            firstView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: topViewMultiplier).isActive = true
+            firstView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: firstViewMultiplier).isActive = true
             firstView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor).isActive = true
             firstView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor ).isActive = true
             firstView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
             
         } else if self.listPosition == .trailingList {
             secondView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
-            secondView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: bottomViewMultiplier).isActive = true
+            secondView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: secondViewMultiplier).isActive = true
             secondView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
             secondView.leadingAnchor.constraint(equalTo: firstView.trailingAnchor).isActive = true
             
             firstView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
-            firstView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: topViewMultiplier).isActive = true
+            firstView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: firstViewMultiplier).isActive = true
             firstView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
             firstView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
         }
