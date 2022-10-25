@@ -28,7 +28,7 @@ class CustomView: UIView {
 extension CustomView: ViewCode {
     func builldHierarchy() {
         addSubview(component)
-        component.view.addSubview(component2)
+        component.topView.addSubview(component2)
 
     }
     
@@ -46,17 +46,17 @@ extension CustomView: ViewCode {
         component.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.9).isActive = true
 
         
-        component2.centerXAnchor.constraint(equalTo: component.view.centerXAnchor).isActive = true
-        component2.centerYAnchor.constraint(equalTo: component.view.centerYAnchor).isActive = true
+        component2.centerXAnchor.constraint(equalTo: component.topView.centerXAnchor).isActive = true
+        component2.centerYAnchor.constraint(equalTo: component.topView.centerYAnchor).isActive = true
         
-        component2.heightAnchor.constraint(equalTo: component.view.safeAreaLayoutGuide.heightAnchor).isActive = true
-        component2.widthAnchor.constraint(equalTo: component.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9).isActive = true
+        component2.heightAnchor.constraint(equalTo: component.topView.safeAreaLayoutGuide.heightAnchor).isActive = true
+        component2.widthAnchor.constraint(equalTo: component.topView.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9).isActive = true
         
     }
     
     func setupConfiguration() {
         self.backgroundColor = .gray
-        self.component2.view.backgroundColor = .cyan
+        self.component2.topView.backgroundColor = .cyan
     }
     
 }

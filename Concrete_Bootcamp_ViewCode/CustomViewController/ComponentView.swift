@@ -14,14 +14,23 @@ class ComponentView: UIView {
     var numberOfLabelViews = 4 //pesquisar como fazer os defaults bonitinho
 
     
-    lazy var view: UIView = {
+    lazy var topView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .blue
         view.layer.cornerRadius = 15
         return view
     }()
-
+    
+    lazy var bottomView: UIView = {
+        let view = UIView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .red
+        view.layer.cornerRadius = 15
+        return view
+    }()
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -44,45 +53,26 @@ class ComponentView: UIView {
 extension ComponentView: ViewCode {
     func builldHierarchy() {
         
-        addSubview(view)
-        
-        for i in stride(from: 0, to: numberOfLabelViews, by: 1) {
-            labelViews.append({
-                let view = UILabel(frame: .zero)
-                view.translatesAutoresizingMaskIntoConstraints = false
-                view.backgroundColor = .red
-                view.text = "Hello World!"
-                return view
-            }())
-            addSubview(labelViews[i])
-
-        }
+        addSubview(topView)
+        addSubview(bottomView)
 
     }
     
     func setupConstraint() {
         
-        let viewMultiplier = 0.60
-        //let labelMultiplier = (1.0 - viewMultiplier) / Double(numberOfLabelViews)
-        let labelMultiplier: CGFloat = 0.40 / CGFloat(numberOfLabelViews)
+        let topViewMultiplier = 0.60
+        let bottomViewMultiplier = 0.40
 
         
-        for i in stride(from: (numberOfLabelViews - 1), to: 0, by: -1) {
-            labelViews[i].topAnchor.constraint(equalTo: labelViews[i-1].bottomAnchor).isActive = true
-            labelViews[i].heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: labelMultiplier).isActive = true
-            labelViews[i].leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor).isActive = true
-            labelViews[i].rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor).isActive = true
-        }
+        bottomView.topAnchor.constraint(equalTo: topView.bottomAnchor).isActive = true
+        bottomView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: bottomViewMultiplier).isActive = true
+        bottomView.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor).isActive = true
+        bottomView.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor).isActive = true
 
-        labelViews[0].topAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        labelViews[0].heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: labelMultiplier).isActive = true
-        labelViews[0].leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor).isActive = true
-        labelViews[0].rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor).isActive = true
-
-        view.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: viewMultiplier).isActive = true
-        view.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor).isActive = true
-        view.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor ).isActive = true
-        view.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        topView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: topViewMultiplier).isActive = true
+        topView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor).isActive = true
+        topView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor ).isActive = true
+        topView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
 
 
