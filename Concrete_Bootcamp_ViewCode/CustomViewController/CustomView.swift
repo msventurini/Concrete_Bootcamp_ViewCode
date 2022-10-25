@@ -39,6 +39,8 @@ extension CustomView: ViewCode {
     }
     
     func setupConstraint() {
+
+        let padding = 8.0
         
         mainComponent.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         mainComponent.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
@@ -47,30 +49,49 @@ extension CustomView: ViewCode {
         mainComponent.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.9).isActive = true
 
         
-        horizontalComponent.topAnchor.constraint(equalTo: mainComponent.firstView.topAnchor).isActive = true
+        horizontalComponent.topAnchor.constraint(equalTo: mainComponent.firstView.topAnchor, constant: padding).isActive = true
         horizontalComponent.heightAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.heightAnchor, multiplier: 0.2).isActive = true
 
-        horizontalComponent.leadingAnchor.constraint(equalTo: mainComponent.firstView.leadingAnchor).isActive = true
-        horizontalComponent.widthAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.widthAnchor).isActive = true
-                
-        leadingVerticalComponent.trailingAnchor.constraint(equalTo: centerVerticalComponent.leadingAnchor).isActive = true
+        horizontalComponent.leadingAnchor.constraint(equalTo: mainComponent.firstView.leadingAnchor, constant: padding).isActive = true
+        horizontalComponent.trailingAnchor.constraint(equalTo: mainComponent.firstView.trailingAnchor, constant: -padding).isActive = true
+
+        leadingVerticalComponent.leadingAnchor.constraint(equalTo: horizontalComponent.leadingAnchor).isActive = true
         leadingVerticalComponent.widthAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.widthAnchor, multiplier: 0.3).isActive = true
 
         leadingVerticalComponent.heightAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
-        leadingVerticalComponent.topAnchor.constraint(equalTo: horizontalComponent.bottomAnchor).isActive = true
+        leadingVerticalComponent.topAnchor.constraint(equalTo: horizontalComponent.bottomAnchor, constant: padding).isActive = true
         
         centerVerticalComponent.centerXAnchor.constraint(equalTo: mainComponent.firstView.centerXAnchor).isActive = true
         centerVerticalComponent.widthAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.widthAnchor, multiplier: 0.3).isActive = true
         
         centerVerticalComponent.heightAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
-        centerVerticalComponent.topAnchor.constraint(equalTo: horizontalComponent.bottomAnchor).isActive = true
+        centerVerticalComponent.topAnchor.constraint(equalTo: horizontalComponent.bottomAnchor, constant: padding).isActive = true
+        
+        trailingVerticalComponent.trailingAnchor.constraint(equalTo: horizontalComponent.trailingAnchor).isActive = true
+        trailingVerticalComponent.widthAnchor.constraint(equalTo: mainComponent.firstView.widthAnchor, multiplier: 0.3).isActive = true
+        
+        trailingVerticalComponent.heightAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
+        trailingVerticalComponent.topAnchor.constraint(equalTo: horizontalComponent.bottomAnchor, constant: padding).isActive = true
+        
+        /*
+        leadingVerticalComponent.trailingAnchor.constraint(equalTo: centerVerticalComponent.leadingAnchor).isActive = true
+        leadingVerticalComponent.widthAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.widthAnchor, multiplier: 0.3).isActive = true
+
+        leadingVerticalComponent.heightAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
+        leadingVerticalComponent.topAnchor.constraint(equalTo: horizontalComponent.bottomAnchor, constant: padding).isActive = true
+        
+        centerVerticalComponent.centerXAnchor.constraint(equalTo: mainComponent.firstView.centerXAnchor).isActive = true
+        centerVerticalComponent.widthAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.widthAnchor, multiplier: 0.3).isActive = true
+        
+        centerVerticalComponent.heightAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
+        centerVerticalComponent.topAnchor.constraint(equalTo: horizontalComponent.bottomAnchor, constant: padding).isActive = true
         
         trailingVerticalComponent.leadingAnchor.constraint(equalTo: centerVerticalComponent.trailingAnchor).isActive = true
         trailingVerticalComponent.widthAnchor.constraint(equalTo: mainComponent.firstView.widthAnchor, multiplier: 0.3).isActive = true
         
         trailingVerticalComponent.heightAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
-        trailingVerticalComponent.topAnchor.constraint(equalTo: horizontalComponent.bottomAnchor).isActive = true
-        
+        trailingVerticalComponent.topAnchor.constraint(equalTo: horizontalComponent.bottomAnchor, constant: padding).isActive = true
+        */
     }
     
     func setupConfiguration() {
