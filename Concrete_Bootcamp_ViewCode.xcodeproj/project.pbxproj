@@ -22,6 +22,7 @@
 		EA5913102900EC8F00351876 /* ComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59130F2900EC8F00351876 /* ComponentView.swift */; };
 		EA5913132901142D00351876 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EA5913122901142D00351876 /* SnapKit */; };
 		EA5913152901178B00351876 /* VariableComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5913142901178B00351876 /* VariableComponentView.swift */; };
+		EA724F6329078FBB001AB4AC /* enumListOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA724F6229078FBB001AB4AC /* enumListOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		EA59130D2900E7B500351876 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		EA59130F2900EC8F00351876 /* ComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentView.swift; sourceTree = "<group>"; };
 		EA5913142901178B00351876 /* VariableComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableComponentView.swift; sourceTree = "<group>"; };
+		EA724F6229078FBB001AB4AC /* enumListOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enumListOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				EA59130F2900EC8F00351876 /* ComponentView.swift */,
 				EA5913142901178B00351876 /* VariableComponentView.swift */,
 				EA11FC4F29033C7400BE4139 /* SolidColorView.swift */,
+				EA724F6229078FBB001AB4AC /* enumListOptions.swift */,
 			);
 			path = CustomViewController;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				EA11FC5029033C7400BE4139 /* SolidColorView.swift in Sources */,
 				EA5913152901178B00351876 /* VariableComponentView.swift in Sources */,
 				EA5912D82900DDD600351876 /* AppDelegate.swift in Sources */,
+				EA724F6329078FBB001AB4AC /* enumListOptions.swift in Sources */,
 				EA5913102900EC8F00351876 /* ComponentView.swift in Sources */,
 				EA5912DA2900DDD600351876 /* SceneDelegate.swift in Sources */,
 				EA5913092900E51B00351876 /* CustomViewController.swift in Sources */,

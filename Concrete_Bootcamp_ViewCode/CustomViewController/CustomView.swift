@@ -10,8 +10,8 @@ import SnapKit
 
 class CustomView: UIView {
     
-    lazy var component = ComponentView(frame: .zero)
-    lazy var component2 = ComponentView(frame: .zero)
+    lazy var component = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList)
+    lazy var component2 = ComponentView(numberOfLabelViews: 1, listPosition: .trailingList)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,7 +28,7 @@ class CustomView: UIView {
 extension CustomView: ViewCode {
     func builldHierarchy() {
         addSubview(component)
-        component.topView.addSubview(component2)
+        component.firstView.addSubview(component2)
 
     }
     
@@ -46,17 +46,19 @@ extension CustomView: ViewCode {
         component.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.9).isActive = true
 
         
-        component2.centerXAnchor.constraint(equalTo: component.topView.centerXAnchor).isActive = true
-        component2.centerYAnchor.constraint(equalTo: component.topView.centerYAnchor).isActive = true
+//        component2.centerXAnchor.constraint(equalTo: component.topView.centerXAnchor).isActive = true
+//        component2.centerYAnchor.constraint(equalTo: component.topView.centerYAnchor).isActive = true
+//        component2.heightAnchor.constraint(equalTo: component.topView.safeAreaLayoutGuide.heightAnchor).isActive = true
+//        component2.widthAnchor.constraint(equalTo: component.topView.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9).isActive = true
         
-        component2.heightAnchor.constraint(equalTo: component.topView.safeAreaLayoutGuide.heightAnchor).isActive = true
-        component2.widthAnchor.constraint(equalTo: component.topView.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9).isActive = true
+        
+        
         
     }
     
     func setupConfiguration() {
         self.backgroundColor = .gray
-        self.component2.topView.backgroundColor = .cyan
+        self.component2.firstView.backgroundColor = .cyan
     }
     
 }
