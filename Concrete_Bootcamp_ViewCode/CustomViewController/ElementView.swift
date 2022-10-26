@@ -20,11 +20,11 @@ class ElementView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(color: UIColor, radius: CFloat) {
+    init(color: UIColor, radius: CGFloat) {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundColor = .blue
-        self.layer.cornerRadius = 15
+        self.backgroundColor = color
+        self.layer.cornerRadius = radius
         
         //setupView()
     }

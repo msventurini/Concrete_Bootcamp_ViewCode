@@ -10,4 +10,5 @@ import Foundation
 enum ListOptions {
     case trailingList
     case bottonList
+    case insideList
 }

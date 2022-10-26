@@ -14,6 +14,7 @@ class ComponentView: UIView {
     var numberOfLabelViews = 4 //pesquisar como fazer os defaults bonitinho
     var listPosition: ListOptions = .bottonList
     
+    var insideViewProportion = 0.50
     var firstViewMultiplier = 0.50
     var secondViewMultiplier = 0.50
     
@@ -21,12 +22,14 @@ class ComponentView: UIView {
     
     var padding = 8.0
     
+    var radius: CGFloat = 0
+    
     var firstViewColor: UIColor = .clear
     var secondViewColor: UIColor = .clear
 
     
-    lazy var firstView = ElementView(color: firstViewColor, radius: 15)
-    lazy var secondView = ElementView(color: secondViewColor, radius: 15)
+    lazy var firstView = ElementView(color: firstViewColor, radius: radius)
+    lazy var secondView = ElementView(color: secondViewColor, radius: radius)
 
     /*
     lazy var firstView: UIView = {
@@ -56,15 +59,21 @@ class ComponentView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(numberOfLabelViews: Int, listPosition: ListOptions, mainViewProportion: Double) {
+    init(numberOfLabelViews: Int, listPosition: ListOptions, mainViewProportion: Double, firstViewColor: UIColor, secondViewColor: UIColor, radius: CGFloat) {
+        
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.numberOfLabelViews = numberOfLabelViews
         self.listPosition = listPosition
+        self.insideViewProportion = mainViewProportion
         self.firstViewMultiplier = mainViewProportion
         self.firstViewMultiplier *= 0.95
         self.secondViewMultiplier = 1 - mainViewProportion
         self.secondViewMultiplier *= 0.95
+        
+        self.radius = radius
+        self.firstViewColor = firstViewColor
+        self.secondViewColor = secondViewColor
         
         setupView()
     }
@@ -104,6 +113,17 @@ extension ComponentView: ViewCode {
             firstView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: firstViewMultiplier).isActive = true
             firstView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
             firstView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
+        } else if self.listPosition == .insideList {
+            secondView.centerXAnchor.constraint(equalTo: firstView.centerXAnchor).isActive = true
+            secondView.centerYAnchor.constraint(equalTo: firstView.centerYAnchor).isActive = true
+            secondView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: insideViewProportion).isActive = true
+            secondView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: insideViewProportion).isActive = true
+
+            firstView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
+            firstView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor).isActive = true
+            firstView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+            firstView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
+            
         }
 
 

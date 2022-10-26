@@ -10,19 +10,23 @@ import SnapKit
 
 class CustomView: UIView {
     
-    lazy var mainComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.9)
-    lazy var horizontalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .trailingList,mainViewProportion: 0.5)
-    lazy var leadingVerticalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList,mainViewProportion: 0.6)
-    lazy var centerVerticalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList,mainViewProportion: 0.6)
-    lazy var trailingVerticalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList,mainViewProportion: 0.6)
+    lazy var mainComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.9, firstViewColor: .systemBlue, secondViewColor: .systemRed, radius: 0)
+    lazy var horizontalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .trailingList,mainViewProportion: 0.5, firstViewColor: .systemGreen, secondViewColor: .clear, radius: 0)
+    lazy var leadingVerticalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList,mainViewProportion: 0.6, firstViewColor: .systemGreen, secondViewColor: .clear, radius: 0)
+    lazy var centerVerticalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList,mainViewProportion: 0.6, firstViewColor: .systemGreen, secondViewColor: .clear, radius: 0)
+    lazy var trailingVerticalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList,mainViewProportion: 0.6, firstViewColor: .systemGreen, secondViewColor: .clear, radius: 0)
     
-    lazy var VHCSubView = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.5)
-    lazy var HHCSubView = ComponentView(numberOfLabelViews: 1, listPosition: .trailingList, mainViewProportion: 0.5)
+    lazy var HCVSubView = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.5, firstViewColor: .systemOrange, secondViewColor: .systemRed, radius: 0)
+    lazy var HCHSubView = ComponentView(numberOfLabelViews: 1, listPosition: .trailingList, mainViewProportion: 0.5, firstViewColor: .systemPink, secondViewColor: .systemCyan, radius: 0)
 
-    lazy var LVCSubview = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.5)
-    lazy var CVCSubview = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.5)
-    lazy var TVCSubview = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.5)
+    lazy var LVCSubview = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.5, firstViewColor: .systemOrange, secondViewColor: .systemRed, radius: 0)
+    lazy var CVCSubview = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.5, firstViewColor: .systemOrange, secondViewColor: .systemRed, radius: 0)
+    lazy var TVCSubview = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.5, firstViewColor: .systemOrange, secondViewColor: .systemRed, radius: 0)
 
+    
+    lazy var centerComponent = ComponentView(numberOfLabelViews: 1, listPosition: .insideList, mainViewProportion: 0.7, firstViewColor: .white, secondViewColor: .black, radius: 10)
+    
+    
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,13 +43,15 @@ class CustomView: UIView {
 extension CustomView: ViewCode {
     func builldHierarchy() {
         addSubview(mainComponent)
+        addSubview(centerComponent)
+        
         mainComponent.firstView.addSubview(horizontalComponent)
         mainComponent.firstView.addSubview(leadingVerticalComponent)
         mainComponent.firstView.addSubview(centerVerticalComponent)
         mainComponent.firstView.addSubview(trailingVerticalComponent)
         
-        horizontalComponent.addSubview(VHCSubView)
-        horizontalComponent.addSubview(HHCSubView)
+        horizontalComponent.addSubview(HCVSubView)
+        horizontalComponent.addSubview(HCHSubView)
 
         leadingVerticalComponent.addSubview(LVCSubview)
         centerVerticalComponent.addSubview(CVCSubview)
@@ -89,19 +95,19 @@ extension CustomView: ViewCode {
         trailingVerticalComponent.topAnchor.constraint(equalTo: horizontalComponent.bottomAnchor, constant: padding).isActive = true
         
         
-        VHCSubView.topAnchor.constraint(equalTo: horizontalComponent.secondView.topAnchor).isActive = true
-        VHCSubView.heightAnchor.constraint(equalTo: horizontalComponent.secondView.heightAnchor, multiplier: 0.66).isActive = true
+        HCVSubView.topAnchor.constraint(equalTo: horizontalComponent.secondView.topAnchor).isActive = true
+        HCVSubView.heightAnchor.constraint(equalTo: horizontalComponent.secondView.heightAnchor, multiplier: 0.66).isActive = true
 
-        VHCSubView.leadingAnchor.constraint(equalTo: horizontalComponent.secondView.leadingAnchor).isActive = true
-        VHCSubView.trailingAnchor.constraint(equalTo: horizontalComponent.secondView.trailingAnchor).isActive = true
+        HCVSubView.leadingAnchor.constraint(equalTo: horizontalComponent.secondView.leadingAnchor).isActive = true
+        HCVSubView.trailingAnchor.constraint(equalTo: horizontalComponent.secondView.trailingAnchor).isActive = true
         
-        HHCSubView.bottomAnchor.constraint(equalTo: horizontalComponent.secondView.bottomAnchor).isActive = true
-        HHCSubView.heightAnchor.constraint(equalTo: VHCSubView.secondView.heightAnchor).isActive = true
+        HCHSubView.bottomAnchor.constraint(equalTo: horizontalComponent.secondView.bottomAnchor).isActive = true
+        HCHSubView.heightAnchor.constraint(equalTo: HCVSubView.secondView.heightAnchor).isActive = true
 
         
         
-        HHCSubView.leadingAnchor.constraint(equalTo: horizontalComponent.secondView.leadingAnchor).isActive = true
-        HHCSubView.trailingAnchor.constraint(equalTo: horizontalComponent.secondView.trailingAnchor).isActive = true
+        HCHSubView.leadingAnchor.constraint(equalTo: horizontalComponent.secondView.leadingAnchor).isActive = true
+        HCHSubView.trailingAnchor.constraint(equalTo: horizontalComponent.secondView.trailingAnchor).isActive = true
         
         
         LVCSubview.topAnchor.constraint(equalTo: leadingVerticalComponent.secondView.topAnchor).isActive = true
@@ -120,12 +126,19 @@ extension CustomView: ViewCode {
         TVCSubview.trailingAnchor.constraint(equalTo: trailingVerticalComponent.secondView.trailingAnchor).isActive = true
         
         
+        centerComponent.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        centerComponent.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        centerComponent.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.10).isActive = true
+        centerComponent.widthAnchor.constraint(equalTo: centerComponent.heightAnchor).isActive = true
+
         
-        
+
     }
     
     func setupConfiguration() {
         self.backgroundColor = .gray
+        
+        /*
         self.horizontalComponent.firstView.backgroundColor = .cyan
         
         self.horizontalComponent.firstView.backgroundColor = .cyan
@@ -141,6 +154,7 @@ extension CustomView: ViewCode {
         
         self.trailingVerticalComponent.firstView.backgroundColor = .cyan
         self.trailingVerticalComponent.secondView.backgroundColor = .black
+         */
 
     }
     
