@@ -90,7 +90,7 @@ extension ComponentView: ViewCode {
             secondView.trailingAnchor.constraint(equalTo:safeAreaLayoutGuide.trailingAnchor).isActive = true
             secondView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
             secondView.leadingAnchor.constraint(equalTo: firstView.trailingAnchor, constant: padding).isActive = true
-            secondView.bottomAnchor.constraint(equalTo: firstView.bottomAnchor).isActive = true
+            secondView.bottomAnchor.constraint(equalTo: firstView.bottomAnchor, constant: -padding).isActive = true
             
             firstView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
             firstView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: firstViewMultiplier).isActive = true

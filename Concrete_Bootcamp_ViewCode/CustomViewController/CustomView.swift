@@ -15,6 +15,14 @@ class CustomView: UIView {
     lazy var leadingVerticalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList,mainViewProportion: 0.6)
     lazy var centerVerticalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList,mainViewProportion: 0.6)
     lazy var trailingVerticalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList,mainViewProportion: 0.6)
+    
+    lazy var VHCSubView = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.5)
+    lazy var HHCSubView = ComponentView(numberOfLabelViews: 1, listPosition: .trailingList, mainViewProportion: 0.5)
+
+    lazy var LVCSubview = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.5)
+    lazy var CVCSubview = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.5)
+    lazy var TVCSubview = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.5)
+
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,7 +43,14 @@ extension CustomView: ViewCode {
         mainComponent.firstView.addSubview(leadingVerticalComponent)
         mainComponent.firstView.addSubview(centerVerticalComponent)
         mainComponent.firstView.addSubview(trailingVerticalComponent)
+        
+        horizontalComponent.addSubview(VHCSubView)
+        horizontalComponent.addSubview(HHCSubView)
 
+        leadingVerticalComponent.addSubview(LVCSubview)
+        centerVerticalComponent.addSubview(CVCSubview)
+        trailingVerticalComponent.addSubview(TVCSubview)
+        
     }
     
     func setupConstraint() {
@@ -73,15 +88,66 @@ extension CustomView: ViewCode {
         trailingVerticalComponent.heightAnchor.constraint(equalTo: mainComponent.firstView.safeAreaLayoutGuide.heightAnchor, multiplier: 0.3).isActive = true
         trailingVerticalComponent.topAnchor.constraint(equalTo: horizontalComponent.bottomAnchor, constant: padding).isActive = true
         
+        
+        VHCSubView.topAnchor.constraint(equalTo: horizontalComponent.secondView.topAnchor).isActive = true
+        //VHCSubView.bottomAnchor.constraint(equalTo: HHCSubView.topAnchor).isActive = true
+        VHCSubView.heightAnchor.constraint(equalTo: horizontalComponent.secondView.heightAnchor, multiplier: 0.66).isActive = true
+
+        VHCSubView.leadingAnchor.constraint(equalTo: horizontalComponent.secondView.leadingAnchor).isActive = true
+        VHCSubView.trailingAnchor.constraint(equalTo: horizontalComponent.secondView.trailingAnchor).isActive = true
+        
+        HHCSubView.topAnchor.constraint(equalTo: VHCSubView.bottomAnchor).isActive = true
+        //HHCSubView.bottomAnchor.constraint(equalTo: horizontalComponent.secondView.bottomAnchor).isActive = true
+        
+        HHCSubView.heightAnchor.constraint(equalTo: horizontalComponent.secondView.heightAnchor, multiplier: 0.33).isActive = true
+
+        
+        
+        HHCSubView.leadingAnchor.constraint(equalTo: horizontalComponent.secondView.leadingAnchor).isActive = true
+        HHCSubView.trailingAnchor.constraint(equalTo: horizontalComponent.secondView.trailingAnchor).isActive = true
+        
+        
+        LVCSubview.topAnchor.constraint(equalTo: leadingVerticalComponent.secondView.topAnchor).isActive = true
+        LVCSubview.bottomAnchor.constraint(equalTo: leadingVerticalComponent.secondView.bottomAnchor).isActive = true
+        LVCSubview.leadingAnchor.constraint(equalTo: leadingVerticalComponent.secondView.leadingAnchor).isActive = true
+        LVCSubview.trailingAnchor.constraint(equalTo: leadingVerticalComponent.secondView.trailingAnchor).isActive = true
+        
+        CVCSubview.topAnchor.constraint(equalTo: centerVerticalComponent.secondView.topAnchor).isActive = true
+        CVCSubview.bottomAnchor.constraint(equalTo: centerVerticalComponent.secondView.bottomAnchor).isActive = true
+        CVCSubview.leadingAnchor.constraint(equalTo: centerVerticalComponent.secondView.leadingAnchor).isActive = true
+        CVCSubview.trailingAnchor.constraint(equalTo: centerVerticalComponent.secondView.trailingAnchor).isActive = true
+        
+        TVCSubview.topAnchor.constraint(equalTo: trailingVerticalComponent.secondView.topAnchor).isActive = true
+        TVCSubview.bottomAnchor.constraint(equalTo: trailingVerticalComponent.secondView.bottomAnchor).isActive = true
+        TVCSubview.leadingAnchor.constraint(equalTo: trailingVerticalComponent.secondView.leadingAnchor).isActive = true
+        TVCSubview.trailingAnchor.constraint(equalTo: trailingVerticalComponent.secondView.trailingAnchor).isActive = true
+        
+        
+        
+        
     }
     
     func setupConfiguration() {
         self.backgroundColor = .gray
         self.horizontalComponent.firstView.backgroundColor = .cyan
-        self.leadingVerticalComponent.firstView.backgroundColor = .green
-        self.centerVerticalComponent.firstView.backgroundColor = .yellow
-        self.trailingVerticalComponent.firstView.backgroundColor = .magenta
         
+        //tirar esse abaixo depois
+        self.mainComponent.firstView.backgroundColor = .brown
+        
+        self.horizontalComponent.firstView.backgroundColor = .cyan
+        self.horizontalComponent.secondView.backgroundColor = .black
+        
+        self.leadingVerticalComponent.firstView.backgroundColor = .cyan
+        self.leadingVerticalComponent.secondView.backgroundColor = .black
+
+        self.centerVerticalComponent.firstView.backgroundColor = .cyan
+        self.centerVerticalComponent.secondView.backgroundColor = .black
+
+        
+        
+        self.trailingVerticalComponent.firstView.backgroundColor = .cyan
+        self.trailingVerticalComponent.secondView.backgroundColor = .black
+
     }
     
 }
