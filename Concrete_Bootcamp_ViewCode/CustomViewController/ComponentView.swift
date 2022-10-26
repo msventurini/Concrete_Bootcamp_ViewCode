@@ -21,23 +21,30 @@ class ComponentView: UIView {
     
     var padding = 8.0
     
+    var firstViewColor: UIColor = .clear
+    var secondViewColor: UIColor = .clear
+
     
+    lazy var firstView = ElementView(color: firstViewColor, radius: 15)
+    lazy var secondView = ElementView(color: secondViewColor, radius: 15)
+
+    /*
     lazy var firstView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .blue
-        view.layer.cornerRadius = 15
+        //.layer.cornerRadius = 15
         return view
     }()
-    
+   
     lazy var secondView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .red
-        view.layer.cornerRadius = 15
+        //view.layer.cornerRadius = 15
         return view
     }()
-    
+     */
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -91,7 +98,7 @@ extension ComponentView: ViewCode {
             secondView.trailingAnchor.constraint(equalTo:safeAreaLayoutGuide.trailingAnchor).isActive = true
             secondView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
             secondView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: secondViewMultiplier).isActive = true
-            secondView.bottomAnchor.constraint(equalTo: firstView.bottomAnchor).isActive = true
+            secondView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
             
             firstView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
             firstView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: firstViewMultiplier).isActive = true

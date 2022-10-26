@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA41795C2908C96600497B19 /* ElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA41795B2908C96600497B19 /* ElementView.swift */; };
 		EA5912D82900DDD600351876 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5912D72900DDD600351876 /* AppDelegate.swift */; };
 		EA5912DA2900DDD600351876 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5912D92900DDD600351876 /* SceneDelegate.swift */; };
 		EA5912DC2900DDD600351876 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5912DB2900DDD600351876 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA41795B2908C96600497B19 /* ElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementView.swift; sourceTree = "<group>"; };
 		EA5912D42900DDD600351876 /* Concrete_Bootcamp_ViewCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concrete_Bootcamp_ViewCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5912D72900DDD600351876 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA5912D92900DDD600351876 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				EA5913082900E51B00351876 /* CustomViewController.swift */,
 				EA59130A2900E60A00351876 /* CustomView.swift */,
 				EA59130F2900EC8F00351876 /* ComponentView.swift */,
+				EA41795B2908C96600497B19 /* ElementView.swift */,
 				EA724F6229078FBB001AB4AC /* enumListOptions.swift */,
 			);
 			path = CustomViewController;
@@ -300,6 +303,7 @@
 				EA5913102900EC8F00351876 /* ComponentView.swift in Sources */,
 				EA5912DA2900DDD600351876 /* SceneDelegate.swift in Sources */,
 				EA5913092900E51B00351876 /* CustomViewController.swift in Sources */,
+				EA41795C2908C96600497B19 /* ElementView.swift in Sources */,
 				EA59130E2900E7B500351876 /* ViewCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

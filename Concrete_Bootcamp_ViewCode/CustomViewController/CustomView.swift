@@ -11,7 +11,7 @@ import SnapKit
 class CustomView: UIView {
     
     lazy var mainComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList, mainViewProportion: 0.9)
-    lazy var horizontalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .trailingList,mainViewProportion: 0.3)
+    lazy var horizontalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .trailingList,mainViewProportion: 0.5)
     lazy var leadingVerticalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList,mainViewProportion: 0.6)
     lazy var centerVerticalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList,mainViewProportion: 0.6)
     lazy var trailingVerticalComponent = ComponentView(numberOfLabelViews: 1, listPosition: .bottonList,mainViewProportion: 0.6)
@@ -90,7 +90,6 @@ extension CustomView: ViewCode {
         
         
         VHCSubView.topAnchor.constraint(equalTo: horizontalComponent.secondView.topAnchor).isActive = true
-        //VHCSubView.bottomAnchor.constraint(equalTo: HHCSubView.topAnchor).isActive = true
         VHCSubView.heightAnchor.constraint(equalTo: horizontalComponent.secondView.heightAnchor, multiplier: 0.66).isActive = true
 
         VHCSubView.leadingAnchor.constraint(equalTo: horizontalComponent.secondView.leadingAnchor).isActive = true
@@ -128,9 +127,6 @@ extension CustomView: ViewCode {
     func setupConfiguration() {
         self.backgroundColor = .gray
         self.horizontalComponent.firstView.backgroundColor = .cyan
-        
-        //tirar esse abaixo depois
-        self.mainComponent.firstView.backgroundColor = .brown
         
         self.horizontalComponent.firstView.backgroundColor = .cyan
         self.horizontalComponent.secondView.backgroundColor = .black
