@@ -55,7 +55,9 @@ class ComponentView: UIView {
         self.numberOfLabelViews = numberOfLabelViews
         self.listPosition = listPosition
         self.firstViewMultiplier = mainViewProportion
+        self.firstViewMultiplier *= 0.95
         self.secondViewMultiplier = 1 - mainViewProportion
+        self.secondViewMultiplier *= 0.95
         
         setupView()
     }
@@ -75,9 +77,8 @@ extension ComponentView: ViewCode {
 
         
         if self.listPosition == .bottonList {
-            
-            secondView.topAnchor.constraint(equalTo: firstView.bottomAnchor, constant: padding).isActive = true
             secondView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: secondViewMultiplier).isActive = true
+            secondView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
             secondView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
             secondView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
             
@@ -89,8 +90,8 @@ extension ComponentView: ViewCode {
         } else if self.listPosition == .trailingList {
             secondView.trailingAnchor.constraint(equalTo:safeAreaLayoutGuide.trailingAnchor).isActive = true
             secondView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
-            secondView.leadingAnchor.constraint(equalTo: firstView.trailingAnchor, constant: padding).isActive = true
-            secondView.bottomAnchor.constraint(equalTo: firstView.bottomAnchor, constant: -padding).isActive = true
+            secondView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: secondViewMultiplier).isActive = true
+            secondView.bottomAnchor.constraint(equalTo: firstView.bottomAnchor).isActive = true
             
             firstView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
             firstView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: firstViewMultiplier).isActive = true

@@ -96,10 +96,8 @@ extension CustomView: ViewCode {
         VHCSubView.leadingAnchor.constraint(equalTo: horizontalComponent.secondView.leadingAnchor).isActive = true
         VHCSubView.trailingAnchor.constraint(equalTo: horizontalComponent.secondView.trailingAnchor).isActive = true
         
-        HHCSubView.topAnchor.constraint(equalTo: VHCSubView.bottomAnchor).isActive = true
-        //HHCSubView.bottomAnchor.constraint(equalTo: horizontalComponent.secondView.bottomAnchor).isActive = true
-        
-        HHCSubView.heightAnchor.constraint(equalTo: horizontalComponent.secondView.heightAnchor, multiplier: 0.33).isActive = true
+        HHCSubView.bottomAnchor.constraint(equalTo: horizontalComponent.secondView.bottomAnchor).isActive = true
+        HHCSubView.heightAnchor.constraint(equalTo: VHCSubView.secondView.heightAnchor).isActive = true
 
         
         
